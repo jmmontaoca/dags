@@ -2,23 +2,31 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
 
-# Definir la función que será ejecutada por la tarea
 def tarea_1():
     print("Esta es la Tarea 1")
 
 def tarea_2():
     print("Esta es la Tarea 2")
 
-# Definir el DAG
+# Definición del DAG con control de acceso a nivel de DAG
 dag = DAG(
-    'mi_dag_dumi',  # Nombre del DAG
-    description='Un ejemplo simple de DAG en Airflow',  # Descripción
-    schedule_interval=None,  # No programado, solo se ejecuta cuando se dispara manualmente
-    start_date=datetime(2025, 4, 14),  # Fecha de inicio
-    catchup=False,  # No hacer retroceso para fechas anteriores
+    'mi_dag_dumi',
+    description='Un ejemplo simple de DAG en Airflow',
+    schedule_interval=None,
+    start_date=datetime(2025, 4, 14),
+    catchup=False,
+    access_control={
+        "Grupo 2": {
+            "can_read",
+            "can_edit",
+            "can_delete"
+        },
+        "DAG Runs": {
+            "can_create"
+        }
+    },
 )
 
-# Definir las tareas
 tarea1 = PythonOperator(
     task_id='tarea_1',
     python_callable=tarea_1,
@@ -31,5 +39,4 @@ tarea2 = PythonOperator(
     dag=dag,
 )
 
-# Establecer dependencias: tarea1 debe ejecutarse antes que tarea2
 tarea1 >> tarea2

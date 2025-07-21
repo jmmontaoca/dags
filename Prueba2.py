@@ -16,10 +16,6 @@ dag = DAG(
     tags=["rol1","metria","Roles"],
     start_date=datetime(2025, 4, 14),
     catchup=False,
-"DAG Runs": {
-            "can_create"
-        }
-    },
 )
 
 tarea1 = PythonOperator(

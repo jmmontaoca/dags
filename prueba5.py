@@ -17,7 +17,7 @@ dag = DAG(
     start_date=datetime(2025, 4, 14),
     catchup=False,
     access_control={
-        "Grupo 2": {
+        "Grupo5": {
             "can_read",
             "can_edit",
             "can_delete"

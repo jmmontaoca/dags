@@ -18,11 +18,8 @@ dag = DAG(
     access_control={
         "Grupo5": {
             "can_read",
+            "can_edit",
         },
-        "DAG Runs": {
-            "can_create"
-        }
-    },
 )
 
 tarea1 = PythonOperator(

@@ -16,13 +16,7 @@ dag = DAG(
     tags=["rol1","metria","Roles"],
     start_date=datetime(2025, 4, 14),
     catchup=False,
-    access_control={
-        "Grupo 2": {
-            "can_read",
-            "can_edit",
-            "can_delete"
-        },
-        "DAG Runs": {
+"DAG Runs": {
             "can_create"
         }
     },

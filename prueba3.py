@@ -16,16 +16,6 @@ dag = DAG(
     tags=["rol2","sequoia","Roles"],
     start_date=datetime(2025, 4, 14),
     catchup=False,
-    access_control={
-        "Grupo 2": {
-            "can_read",
-            "can_edit",
-            "can_delete"
-        },
-        "DAG Runs": {
-            "can_create"
-        }
-    },
 )
 
 tarea1 = PythonOperator(

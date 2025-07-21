@@ -18,7 +18,6 @@ dag = DAG(
     access_control={
         "Grupo5": {
             "can_read",
-            "can_trigger"
         },
         "DAG Runs": {
             "can_create"

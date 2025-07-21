@@ -15,16 +15,6 @@ dag = DAG(
     schedule_interval=None,
     start_date=datetime(2025, 4, 14),
     catchup=False,
-    access_control={
-        "Grupo 2": {
-            "can_read",
-            "can_edit",
-            "can_delete"
-        },
-        "DAG Runs": {
-            "can_create"
-        }
-    },
 )
 
 tarea1 = PythonOperator(

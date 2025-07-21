@@ -19,6 +19,7 @@ dag = DAG(
         "Grupo5": {
             "can_read",
             "can_edit"
+        }
         },
 )
 

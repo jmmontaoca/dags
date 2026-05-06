@@ -11,7 +11,7 @@ def tarea_2():
 
 # Definición del DAG con control de acceso a nivel de DAG
 dag = DAG(
-    'JUANMA_mi_dag_dumi',
+    'JUANMA_prueba_mi_dag_dumi',
     description='Un ejemplo simple de DAG en Airflow',
     schedule=None,
     start_date=datetime(2025, 4, 14),

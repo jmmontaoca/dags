@@ -1,12 +1,13 @@
 from datetime import datetime
 from airflow import DAG
-from airflow.operators.dummy import DummyOperator
+from airflow.operators.empty import EmptyOperator
+from airflow.operators.python import PythonOperator
 
 # Definición del DAG
 dag = DAG(
     dag_id='dag_simple_4_tareas',
     start_date=datetime(2025, 7, 14),
-    schedule_interval='@daily',
+    schedule='@daily',
     catchup=False,
 )
 

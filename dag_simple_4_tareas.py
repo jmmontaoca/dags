@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 
 # Definición del DAG
 dag = DAG(
-    dag_id='JUANMA_dag_simple_4_tareas',
+    dag_id='JUANMA_prueba_dag_simple_4_tareas',
     start_date=datetime(2025, 7, 14),
     schedule='@daily',
     catchup=False,

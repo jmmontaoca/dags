@@ -1,5 +1,6 @@
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.empty import EmptyOperator
+from airflow.operators.python import PythonOperator
 from datetime import datetime
 
 def tarea_1():
@@ -12,7 +13,7 @@ def tarea_2():
 dag = DAG(
     'dag_prueba3',
     description='Un ejemplo simple de DAG en Airflow',
-    schedule_interval=None,
+    schedule=None,
     tags=["rol2","sequoia","Roles"],
     start_date=datetime(2025, 4, 14),
     catchup=False,
